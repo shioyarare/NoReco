@@ -23,8 +23,7 @@ function noMoreRecommended() {
 
             // current view is recommended timeline?
             if (link.getAttribute("aria-selected") === "true") isRecommended = true;
-          }
-          
+          }        
 
           if (isRecommended && link.innerText === "フォロー中") {
             // go to following timeline
