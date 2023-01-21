@@ -1,4 +1,5 @@
 window.addEventListener("load", noMoreRecommended, false);
+window.addEventListener("pageshow", noMoreRecommended);
 
 function getLinkCollection() {
   return document.getElementsByTagName('a');
@@ -19,7 +20,7 @@ function noMoreRecommended() {
 
           if (link.innerText === "おすすめ") {
             // hide recommended nav
-            linkCollection[i].parentElement.style.display = "none";
+            // linkCollection[i].parentElement.style.display = "none";
 
             // current view is recommended timeline?
             if (link.getAttribute("aria-selected") === "true") isRecommended = true;
