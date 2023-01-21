@@ -5,7 +5,7 @@ function getLinkCollection() {
 }
 
 function noMoreRecommended() {
-  const jsInitCheckTimer = setInterval(jsLoaded, 1000);
+  const jsInitCheckTimer = setInterval(jsLoaded, 500);
 
   function jsLoaded() {
     if (getLinkCollection().length !== 0) {
@@ -23,6 +23,9 @@ function noMoreRecommended() {
           // is recommended?
           if (link.innerText === "おすすめ") {
             console.log("現在おすすめのタイムラインが表示されています。")
+            linkCollection[i-1].style.display = "none";
+            console.log(linkCollection[i-1].parentElement.style.display = "none");
+            console.log(link.style.display)
             isRecommended = true;
           }
           
