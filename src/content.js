@@ -24,7 +24,7 @@ function noMoreRecommended() {
           if (link.innerText === "おすすめ") {
             console.log("現在おすすめのタイムラインが表示されています。")
             linkCollection[i-1].style.display = "none";
-            console.log(linkCollection[i-1].parentElement.style.display = "none");
+            console.log(linkCollection[i-1].parentElement.style.display = "none");t
             console.log(link.style.display)
             isRecommended = true;
           }

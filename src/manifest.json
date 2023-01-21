@@ -1,8 +1,8 @@
 {
-  "name": "Sample",
+  "name": "No More Recommended TL",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Sample Chrome Extension",
+  "description": "Escape from the recommended timeline on Twitter.",
   "content_scripts": [{
     "matches": ["https://twitter.com/home"],
     "js": [
