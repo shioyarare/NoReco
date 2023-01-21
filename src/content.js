@@ -9,34 +9,29 @@ function noMoreRecommended() {
 
   function jsLoaded() {
     if (getLinkCollection().length !== 0) {
-      console.log("clear interval");
       clearInterval(jsInitCheckTimer);
 
       // completed to loading
       var linkCollection = document.getElementsByTagName('a');
       var isRecommended = false;
-      var i = 0;
-      for (const link of linkCollection) {
-        i += 1;
+      for (const [i ,link] of Object.entries(linkCollection)) {
         if (link.getAttribute("href") === "/home" && link.getAttribute("role") === "tab") {
 
-          // is recommended?
           if (link.innerText === "おすすめ") {
-            console.log("現在おすすめのタイムラインが表示されています。")
-            linkCollection[i-1].style.display = "none";
-            console.log(linkCollection[i-1].parentElement.style.display = "none");t
-            console.log(link.style.display)
-            isRecommended = true;
+            // hide recommended nav
+            linkCollection[i].parentElement.style.display = "none";
+
+            // current view is recommended timeline?
+            if (link.getAttribute("aria-selected") === "true") isRecommended = true;
           }
           
+
           if (isRecommended && link.innerText === "フォロー中") {
-            console.log("フォロー中へ遷移");
-            linkCollection[i-1].click();
+            // go to following timeline
+            linkCollection[i].click();
           }
         }
       }
-      console.log(linkCollection);
-      console.log(linkCollection.length);
     }
   }
 }
